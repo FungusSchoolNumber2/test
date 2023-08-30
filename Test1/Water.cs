@@ -29,7 +29,7 @@ public class Water
         {
             for (int i = 0; i < ships; i++)
             {
-                makeCords();
+                MakeCords();
             }
         }
         cordsToList();
@@ -40,12 +40,12 @@ public class Water
         }
     }
 
-    private void makeCords()
+    private void MakeCords()
     {
         bool run = true;
         while (run)
         {
-            bool works = true;
+            bool wors = true;
 
             int cord1 = RNG.Next(_areaSize);
             int cord2 = RNG.Next(_areaSize);
@@ -55,11 +55,11 @@ public class Water
             {
                 if (newCord == cord)
                 {
-                    works = false;
+                    wors = false;
                 }
             }
 
-            if (works == true)
+            if (wors == true)
             {
                 cords.Add(newCord);
                 run = false;
