@@ -1,4 +1,14 @@
-﻿using Test1;
+﻿
+namespace Test1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          Water Bot = new Water(5, 3, true);
+          Bot.drawGrid();
+          
+        }
+    }
+}
 
-Water Bot = new Water(3, 3, true);
-Bot.drawGrid();
