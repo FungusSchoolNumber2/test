@@ -32,6 +32,10 @@ public class Water
                 MakeCords();
             }
         }
+        else
+        {
+            InputCords(ships);
+        }
         cordsToList();
 
         foreach (string cord in cords)
@@ -45,7 +49,7 @@ public class Water
         bool run = true;
         while (run)
         {
-            bool wors = true;
+            bool works = true;
 
             int cord1 = RNG.Next(_areaSize);
             int cord2 = RNG.Next(_areaSize);
@@ -55,15 +59,40 @@ public class Water
             {
                 if (newCord == cord)
                 {
-                    wors = false;
+                    works = false;
                 }
             }
 
-            if (wors == true)
+            if (works == true)
             {
                 cords.Add(newCord);
                 run = false;
             }
+        }
+    }
+
+    private void InputCords(int ships)
+    {
+        string[] tempCordsArray = new string[ships];
+        for (int i = 0; i < ships; i++)
+        {
+            while (true)
+            {
+                Console.Write($"Input the place for your {i} ship: ");
+                string input = Console.ReadLine();
+                if (tempCordsArray.Contains(input))
+                {
+                    Console.WriteLine("You have already used that coordinate please try again!");  
+                }
+                else
+                {
+                    tempCordsArray[i] = input;
+                    string[] split = input.Split(',');
+                    area[int.Parse(split[0])][int.Parse(split[1])] = true;
+                    break;
+                }
+            }
+            
         }
     }
 

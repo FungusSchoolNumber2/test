@@ -5,10 +5,21 @@ namespace Test1
     {
         static void Main(string[] args)
         {
-          Water Bot = new Water(5, 3, true);
-          Bot.drawGrid();
-          
+            int areaSize;
+            int ships;
+            bool multiplayer;
+            gameSetup(out areaSize, out ships, out multiplayer);
+            Bot.drawGrid();
+            Water player = new Water(5, 3, false);
+            player.drawGrid();
         }
+
+        static void gameSetup(out int areaSize, out int ships, out bool mutiplayer)
+        {
+            Console.Write("How big would you like the arena to be: ");
+            
+        }
+
     }
 }
 
