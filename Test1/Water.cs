@@ -78,7 +78,7 @@ public class Water
         {
             while (true)
             {
-                Console.Write($"Input the place for your {i} ship: ");
+                Console.Write($"Input the place for your {i + 1} ship: ");
                 string input = Console.ReadLine();
                 if (tempCordsArray.Contains(input))
                 {

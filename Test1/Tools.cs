@@ -1,8 +1,8 @@
 namespace Test1;
 
-public class Tools
+interface Tools
 {
-    public int SafeInts(string input, int? maxValue = null, int? minValue = null)
+    static int SafeInts(string input, int? maxValue = null, int? minValue = null)
     {
         int output;
         while (true)
